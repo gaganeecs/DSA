@@ -1,0 +1,36 @@
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+    
+        
+        unordered_map<char,int> x,y;
+        
+        for(int i =0 ; i<s.length() ;i++){
+             if(x.find(s[i])==x.end()){
+                 x.insert(make_pair(s[i],1));
+             }else{
+                 x[s[i]]++;
+             }
+            
+        }    
+        
+        for(int i =0 ; i<t.length();i++){
+             if(y.find(t[i])==y.end()){
+                 y.insert(make_pair(t[i],1));
+             }else{
+                 y[t[i]]++;
+             }
+            
+        }   
+        
+        if(x==y){
+            return true;
+        }else{
+            return false;
+        }
+        
+        
+           
+       
+    }
+};
